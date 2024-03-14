@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class='form-container'>
+            <form action="">
+
+                <div class="user-div">
+                    <label for="">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" oninput="validate_username()">
+                    <p class="message" id="msg1">You must enter a username.</p>
+                </div>
+        
+                <div class="pass-div">
+                    <label for="">Password</label>
+                    <input type="password" name="" id="pass" placeholder="Enter password" oninput="validate_pass()">
+                    <p class="message" id="msg2">You must enter a password.</p>
+                </div>
+
+                <button class="btn" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    let username = document.getElementById('username');
+    let password = document.getElementById('pass');
+    let msg1 = document.getElementById('msg1');
+    let msg2 = document.getElementById('msg2');
+
+    function validate_username(){
+        if (username.value.trim() == ''){
+            msg1.classList.add('msg-visible');
+        }
+        else{
+            msg1.classList.remove('msg-visible');
+        }
+    }
+
+    function validate_pass(){
+        
+        if(password.value == ''){
+            msg2.classList.add('msg-visible');
+        }
+        else{
+            msg2.classList.remove('msg-visible');
+        }
+    }
+</script>
+</html>
